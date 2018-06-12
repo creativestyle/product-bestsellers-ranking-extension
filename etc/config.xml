@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <bestsellers>
+            <order_status_configuration>
+                <order_statuses>pending,processing,fraud,complete,closed,canceled,holded</order_statuses>
+            </order_status_configuration>
+            <orders_period>
+                <period>3</period>
+            </orders_period>
+            <boosting_factors>
+                <boosting_factor_week>3</boosting_factor_week>
+                <boosting_factor_month>2</boosting_factor_month>
+                <boosting_factor_year>1</boosting_factor_year>
+                <boosting_factor_general>0</boosting_factor_general>
+                <boosting_factor_sold_out>1</boosting_factor_sold_out>
+            </boosting_factors>
+            <sorting>
+                <direction>asc</direction>
+            </sorting>
+        </bestsellers>
+    </default>
+</config>

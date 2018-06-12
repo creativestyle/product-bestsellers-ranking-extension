@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="creativestyle" translate="label" sortOrder="300">
+            <label>creativeshop</label>
+        </tab>
+        <section id="bestsellers" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Bestsellers</label>
+            <tab>creativestyle</tab>
+            <resource>Creativestyle_ProductBestsellersRankingExtension::config_bestsellers</resource>
+            <group id="orders_period" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Orders Period</label>
+                <field id="period" translate="label" type="select" sortOrder="10" showInDefault="1" >
+                    <label>Orders Period</label>
+                    <source_model>Creativestyle\ProductBestsellersRankingExtension\Model\Config\Source\OrdersPeriod</source_model>
+                </field>
+            </group>
+            <group id="boosting_factors" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Boosting Factors</label>
+                <comment>You can set up below boosting factors to increase product scoring during bestsellers calculation. If order is older it gets lower boosting factor.</comment>
+                <field id="boosting_factor_week" translate="label" type="text" sortOrder="10" showInDefault="1" >
+                    <label>Boosting Factor A</label>
+                    <comment>Orders within 7 days will get this boosting factor (eg. 3)</comment>
+                </field>
+                <field id="boosting_factor_month" translate="label" type="text" sortOrder="20" showInDefault="1" >
+                    <label>Boosting Factor B</label>
+                    <comment>Orders within 30 days will get this boosting factor (eg. 2)</comment>
+                </field>
+                <field id="boosting_factor_year" translate="label" type="text" sortOrder="30" showInDefault="1" >
+                    <label>Boosting Factor C</label>
+                    <comment>Orders within 356 days will get this boosting factor (eg. 1)</comment>
+                </field>
+                <field id="boosting_factor_general" translate="label" type="text" sortOrder="40" showInDefault="1" >
+                    <label>Boosting Factor D</label>
+                    <comment>Orders older than 365 days will get this boosting factor (eg. 0)</comment>
+                </field>
+                <field id="boosting_factor_sold_out" translate="label" type="text" sortOrder="40" showInDefault="1" >
+                    <label>Sold Out Decrease Factor</label>
+                    <comment>Products that are sold out will have this decrease factor (eg. 0.5)</comment>
+                </field>
+            </group>
+            <group id="sorting" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Sorting</label>
+                <field id="direction" translate="label" type="select" sortOrder="20" showInDefault="1" >
+                    <label>Sorting Direction</label>
+                    <source_model>\Creativestyle\FrontendExtension\Model\Config\Source\SortingDestination</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
